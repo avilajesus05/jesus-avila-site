@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;450;500;600&display=swap');
+
+:root { color-scheme: dark; font-family: 'Manrope', 'Segoe UI', sans-serif; background: #08080b; color: #f3f1f3; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { min-height: 100svh; display: grid; place-items: center; position: relative; overflow: hidden; isolation: isolate; padding: 40px 24px 72px; }
+main::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .042; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.91' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.7' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+.atmosphere { position: absolute; z-index: -2; width: min(960px, 120vw); height: 760px; top: 50%; left: 50%; transform: translate(-50%, -58%); background: radial-gradient(ellipse at 48% 32%, #35305225 0%, #1c182016 40%, transparent 69%); pointer-events: none; }
+.edge-glow { position: absolute; pointer-events: none; width: 65vw; height: 25vh; left: -30vw; bottom: -22vh; background: #795eaf; opacity: .12; filter: blur(90px); z-index: -1; }
+.composition { text-align: center; width: 100%; max-width: 740px; position: relative; }
+.sculpture { display: block; position: relative; margin: 0 auto 22px; width: 460px; aspect-ratio: 23 / 15; max-width: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; outline-offset: 6px; border-radius: 20px; touch-action: none; cursor: default; -webkit-tap-highlight-color: transparent; user-select: none; }
+.sculpture[data-hover="true"] { cursor: grab; }
+.sculpture[data-dragging="true"] { cursor: grabbing; }
+.sculpture:focus-visible { outline: 1px solid #c5b8ee; }
+canvas { width: 100%; height: 100%; display: block; }
+.interaction-hint { display: flex; align-items: center; justify-content: center; gap: 10px; position: absolute; bottom: 0; width: 100%; font-size: 9px; letter-spacing: .12em; color: #929099; opacity: .6; transform: translateY(-3px); transition: opacity .6s, transform .6s; pointer-events: none; }
+.sculpture:hover .interaction-hint, .sculpture:focus-visible .interaction-hint { opacity: .85; transform: translateY(0); }
+.hint-line { width: 14px; height: 1px; background: currentColor; opacity: .5; }
+h1 { font-weight: 500; font-size: clamp(48px, 6vw, 76px); letter-spacing: -.065em; line-height: 1.13; margin: 0; text-wrap: nowrap; }
+h1 span { color: #b9aec9; }
+.message { margin: 20px 0 0; color: #aaa7b1; font-size: 15px; font-weight: 400; letter-spacing: .015em; line-height: 1.7; }
+.contact { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 68px; font-style: normal; font-size: 11px; letter-spacing: .015em; }
+.contact a { color: #96929e; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; gap: 10px; transition: color .22s; white-space: nowrap; }
+.contact a:hover { color: #f1edf7; }
+.contact a:focus-visible { color: #f1edf7; outline: 1px solid #c5b8ee; outline-offset: 6px; border-radius: 2px; }
+.contact svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 1.2; opacity: .65; transition: transform .22s; }
+.contact a:hover svg { transform: translate(2px, -2px); }
+.contact-separator { width: 2px; height: 2px; border-radius: 50%; background: #605a69; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 600px) {
+  main { padding: 30px 20px 48px; }
+  .sculpture { width: 340px; margin-bottom: 30px; }
+  h1 { font-size: clamp(43px, 12vw, 62px); }
+  .message { font-size: 14px; margin-top: 18px; }
+  .contact { flex-direction: column; gap: 0; margin-top: 42px; font-size: 11px; }
+  .contact-separator { display: none; }
+  .contact a { min-height: 38px; }
+}
+@media (max-height: 680px) and (min-width: 601px) {
+  main { padding-top: 16px; padding-bottom: 24px; }
+  .sculpture { width: 340px; margin-bottom: 22px; }
+  h1 { font-size: 56px; }
+  .contact { margin-top: 26px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

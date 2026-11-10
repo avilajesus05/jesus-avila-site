@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08080b" />
+    <meta name="description" content="Jesús Avila. Algo está tomando forma. Diseño, curiosidad y nuevas ideas. Próximamente." />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Jesús Avila — Próximamente</title>
+  </head>
+  <body>
+    <main>
+      <div class="atmosphere" aria-hidden="true"></div>
+      <section class="composition" aria-labelledby="name">
+        <button class="sculpture" type="button" aria-label="Figuras con gravedad. Arrastra una figura para moverla y suéltala para lanzarla. Pulsa Enter para mezclar las figuras." aria-describedby="shapes-help">
+          <canvas id="shapes" aria-hidden="true"></canvas>
+          <span class="interaction-hint" aria-hidden="true"><span class="hint-line"></span><span class="hint-text">agarra · mueve · suelta</span><span class="hint-line"></span></span>
+        </button>
+        <span id="shapes-help" class="sr-only">Seis figuras que caen, giran y chocan entre sí. Puedes arrastrarlas con el mouse o el dedo. Con el teclado, pulsa Enter o espacio para mezclarlas. Con movimiento reducido, se reordenan sin animación.</span>
+        <h1 id="name">Jesús Avila<span aria-hidden="true">.</span></h1>
+        <p class="message">Algo está tomando forma.</p>
+        <address class="contact" aria-label="Contacto">
+          <a href="mailto:aviladesign.info@gmail.com">aviladesign.info@gmail.com<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" /></svg></a>
+          <span class="contact-separator" aria-hidden="true"></span>
+          <a href="tel:+525527622249">+52 55 2762 2249<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" /></svg></a>
+        </address>
+      </section>
+      <div class="edge-glow" aria-hidden="true"></div>
+    </main>
+    <script src="./vendor/matter.min.js"></script>
+    <script type="module" src="./shapes.js"></script>
+  </body>
+</html>
